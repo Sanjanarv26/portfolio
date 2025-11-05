@@ -1,0 +1,821 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sanjana R V | Software Engineer</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      background-color: #0b0e12;
+      color: #e0e0e0;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    /* Particle Background */
+    #particles-js {
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      z-index: 0;
+    }
+
+    header {
+      position: relative;
+      z-index: 1;
+      text-align: center;
+      padding: 4rem 1rem;
+      background: linear-gradient(135deg, #1c2833, #10161d);
+      border-bottom: 2px solid #1abc9c;
+      overflow: hidden;
+    }
+
+    header h1 {
+      font-size: 2.8rem;
+      color: #1abc9c;
+      letter-spacing: 2px;
+      animation: glow 2s ease-in-out infinite alternate;
+    }
+
+    @keyframes glow {
+      from {
+        text-shadow: 0 0 10px #1abc9c, 0 0 20px #1abc9c, 0 0 30px #1abc9c;
+      }
+      to {
+        text-shadow: 0 0 20px #1abc9c, 0 0 30px #1abc9c, 0 0 40px #1abc9c, 0 0 50px #1abc9c;
+      }
+    }
+
+    header h3 {
+      font-weight: 300;
+      color: #bbb;
+      margin-top: 10px;
+    }
+
+    main {
+      position: relative;
+      z-index: 1;
+      max-width: 1100px;
+      margin: 2rem auto;
+      background: rgba(20, 26, 33, 0.95);
+      padding: 2.5rem;
+      border-radius: 15px;
+      box-shadow: 0 0 20px rgba(26, 188, 156, 0.2);
+      backdrop-filter: blur(10px);
+    }
+
+    section {
+      margin-bottom: 2.5rem;
+    }
+
+    h2 {
+      color: #1abc9c;
+      font-size: 1.6rem;
+      border-left: 5px solid #1abc9c;
+      padding-left: 10px;
+      margin-bottom: 1rem;
+      position: relative;
+    }
+
+    h2::after {
+      content: '';
+      position: absolute;
+      bottom: -5px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: #1abc9c;
+      transition: width 0.5s ease;
+    }
+
+    h2:hover::after {
+      width: 100%;
+    }
+
+    p {
+      color: #cfd8dc;
+      margin-bottom: 1rem;
+    }
+
+    .contact p a {
+      color: #1abc9c;
+      text-decoration: none;
+    }
+
+    .skills-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      position: relative;
+      z-index: 10;
+    }
+
+    .skill {
+      background: #1f2a35;
+      color: #1abc9c;
+      border: 1px solid #1abc9c;
+      border-radius: 20px;
+      padding: 8px 14px;
+      font-size: 0.9rem;
+      transition: all 0.3s ease;
+      cursor: pointer;
+      position: relative;
+      overflow: hidden;
+      z-index: 10;
+    }
+
+    .skill::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 0;
+      height: 0;
+      border-radius: 50%;
+      background: rgba(26, 188, 156, 0.3);
+      transform: translate(-50%, -50%);
+      transition: width 0.6s, height 0.6s;
+    }
+
+    .skill:hover::before {
+      width: 300px;
+      height: 300px;
+    }
+
+    .skill:hover {
+      background: #1abc9c;
+      color: #0b0e12;
+      transform: translateY(-5px) scale(1.05);
+      box-shadow: 0 5px 15px rgba(26, 188, 156, 0.4);
+    }
+
+    .project-item {
+      background: rgba(28, 40, 51, 0.95);
+      padding: 1rem 1.5rem;
+      border-radius: 10px;
+      margin-bottom: 1.5rem;
+      border-left: 3px solid #1abc9c;
+      transition: all 0.4s ease;
+      position: relative;
+      overflow: hidden;
+      z-index: 10;
+    }
+
+    .project-item h3 {
+      color: #1abc9c;
+      margin-bottom: 0.5rem;
+    }
+
+    .project-item p {
+      color: #cfd8dc;
+    }
+
+    .project-item::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(26, 188, 156, 0.1), transparent);
+      transition: left 0.5s ease;
+    }
+
+    .project-item:hover::before {
+      left: 100%;
+    }
+
+    .project-item:hover {
+      transform: translateX(10px) translateY(-5px);
+      box-shadow: 0 10px 30px rgba(26, 188, 156, 0.3);
+      border-left-width: 5px;
+      background: rgba(28, 40, 51, 1);
+    }
+
+    ul {
+      list-style: none;
+    }
+
+    ul li {
+      padding: 5px 0;
+      position: relative;
+      padding-left: 20px;
+      transition: all 0.3s ease;
+      color: #cfd8dc;
+    }
+
+    ul li::before {
+      content: '▹';
+      position: absolute;
+      left: 0;
+      color: #1abc9c;
+      font-size: 1.2rem;
+      transition: transform 0.3s ease;
+    }
+
+    ul li:hover {
+      padding-left: 30px;
+      color: #1abc9c;
+    }
+
+    ul li:hover::before {
+      transform: translateX(5px);
+    }
+
+    footer {
+      position: relative;
+      z-index: 1;
+      text-align: center;
+      padding: 1rem;
+      color: #888;
+      background: #10161d;
+      border-top: 1px solid #1abc9c;
+    }
+
+    @media (max-width: 768px) {
+      main {
+        margin: 1rem;
+        padding: 1.5rem;
+      }
+      header h1 {
+        font-size: 2rem;
+      }
+      .profile-content {
+        flex-direction: column;
+        text-align: center;
+      }
+      .profile-image {
+        margin-right: 0;
+        margin-bottom: 1.5rem;
+      }
+    }
+
+    .button {
+      display: inline-block;
+      margin-top: 1rem;
+      background: #1abc9c;
+      color: #0b0e12;
+      padding: 10px 20px;
+      border-radius: 25px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+      z-index: 10;
+    }
+
+    .button::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 0;
+      height: 0;
+      background: rgba(22, 160, 133, 0.5);
+      border-radius: 50%;
+      transform: translate(-50%, -50%);
+      transition: width 0.5s, height 0.5s;
+    }
+
+    .button:hover::before {
+      width: 300px;
+      height: 300px;
+    }
+
+    .button:hover {
+      background: #16a085;
+      transform: translateY(-3px);
+      box-shadow: 0 10px 20px rgba(26, 188, 156, 0.4);
+    }
+
+    /* Profile Section with Image */
+    .profile-content {
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+    }
+
+    .profile-image {
+      flex-shrink: 0;
+      animation: float 3s ease-in-out infinite;
+    }
+
+    @keyframes float {
+      0%, 100% {
+        transform: translateY(0px);
+      }
+      50% {
+        transform: translateY(-20px);
+      }
+    }
+
+    .profile-image img {
+      width: 180px;
+      height: 180px;
+      border-radius: 50%;
+      border: 4px solid #1abc9c;
+      object-fit: cover;
+      box-shadow: 0 0 30px rgba(26, 188, 156, 0.6);
+      transition: all 0.4s ease;
+    }
+
+    .profile-image img:hover {
+      transform: scale(1.1) rotate(5deg);
+      box-shadow: 0 0 50px rgba(26, 188, 156, 0.8);
+    }
+
+    .profile-text {
+      flex: 1;
+    }
+
+    /* Contact Icons Section */
+    .contact-icons {
+      display: flex;
+      gap: 15px;
+      margin-top: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .contact-icon {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 50px;
+      height: 50px;
+      background: #1abc9c;
+      color: #0b0e12;
+      border-radius: 50%;
+      font-size: 1.3rem;
+      text-decoration: none;
+      transition: all 0.4s ease;
+      box-shadow: 0 0 10px rgba(26, 188, 156, 0.3);
+      position: relative;
+      z-index: 10;
+    }
+
+    .contact-icon::after {
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      border: 2px solid #1abc9c;
+      opacity: 0;
+      transform: scale(1);
+      transition: all 0.4s ease;
+    }
+
+    .contact-icon:hover::after {
+      transform: scale(1.3);
+      opacity: 0;
+    }
+
+    .contact-icon:hover {
+      background: #16a085;
+      transform: translateY(-10px) rotate(360deg);
+      box-shadow: 0 15px 30px rgba(26, 188, 156, 0.6);
+    }
+
+    .contact-details {
+      margin-top: 1.5rem;
+    }
+
+    .contact-item {
+      display: flex;
+      align-items: center;
+      margin-bottom: 0.8rem;
+      color: #cfd8dc;
+      transition: all 0.3s ease;
+      padding: 5px;
+      border-radius: 5px;
+    }
+
+    .contact-item:hover {
+      background: rgba(26, 188, 156, 0.1);
+      padding-left: 15px;
+    }
+
+    .contact-item i {
+      color: #1abc9c;
+      margin-right: 10px;
+      width: 20px;
+      transition: transform 0.3s ease;
+    }
+
+    .contact-item:hover i {
+      transform: scale(1.3) rotate(360deg);
+    }
+
+    .contact-item a {
+      color: #1abc9c;
+      text-decoration: none;
+      transition: 0.3s ease;
+    }
+
+    .contact-item a:hover {
+      color: #16a085;
+      text-decoration: underline;
+    }
+
+    /* Scroll to top button */
+    #scrollTop {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      width: 50px;
+      height: 50px;
+      background: #1abc9c;
+      color: #0b0e12;
+      border: none;
+      border-radius: 50%;
+      font-size: 1.5rem;
+      cursor: pointer;
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.3s ease;
+      z-index: 1000;
+      box-shadow: 0 5px 15px rgba(26, 188, 156, 0.4);
+    }
+
+    #scrollTop.show {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    #scrollTop:hover {
+      background: #16a085;
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px rgba(26, 188, 156, 0.6);
+    }
+
+    /* Loading animation */
+    .loader {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: #0b0e12;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 9999;
+      transition: opacity 0.5s ease;
+    }
+
+    .loader.hidden {
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    .loader-content {
+      text-align: center;
+    }
+
+    .spinner {
+      width: 60px;
+      height: 60px;
+      border: 5px solid rgba(26, 188, 156, 0.1);
+      border-top-color: #1abc9c;
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
+    }
+
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+
+    .loader-text {
+      color: #1abc9c;
+      margin-top: 20px;
+      font-size: 1.2rem;
+      animation: pulse 1.5s ease-in-out infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.5; }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Loader -->
+  <div class="loader">
+    <div class="loader-content">
+      <div class="spinner"></div>
+      <div class="loader-text">Loading Portfolio...</div>
+    </div>
+  </div>
+
+  <!-- Particle Background -->
+  <div id="particles-js"></div>
+
+  <header data-aos="fade-down">
+    <h1>SANJANA R V</h1>
+    <h3>Software Engineer | Computer Science & Design Student</h3>
+  </header>
+
+  <main>
+    <!-- Profile -->
+    <section data-aos="fade-up">
+      <h2>Profile</h2>
+      <div class="profile-content">
+        <div class="profile-image">
+          <img src="WhatsApp Image 2025-11-05 at 06.36.06_9b71c1cc.jpg" alt="Sanjana R V">
+        </div>
+        <div class="profile-text">
+          <p>
+            I am Sanjana R V, a 3rd-year Computer Science and Design Engineering student at PES Institute of Technology and Management. 
+            I'm passionate about building creative, user-centered software solutions. 
+            I value teamwork, innovation, and efficiency — always eager to learn and take on new challenges in tech.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section class="contact" data-aos="fade-up" data-aos-delay="100">
+      <h2>Contact</h2>
+      <div class="contact-icons">
+        <a href="tel:+917892386906" class="contact-icon" title="Phone">
+          <i class="fas fa-phone"></i>
+        </a>
+        <a href="mailto:sanjana04645@gmail.com" class="contact-icon" title="Email">
+          <i class="fas fa-envelope"></i>
+        </a>
+        <a href="https://github.com/Sanjanarv26" class="contact-icon" title="GitHub" target="_blank">
+          <i class="fab fa-github"></i>
+        </a>
+        <a href="https://www.linkedin.com/in/sanjana-r-v-86b49a299?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" class="contact-icon" title="LinkedIn" target="_blank">
+          <i class="fab fa-linkedin"></i>
+        </a>
+      </div>
+      <div class="contact-details">
+        <div class="contact-item">
+          <i class="fas fa-phone"></i>
+          <span><a href="tel:+917892386906">+91 78923 86906</a></span>
+        </div>
+        <div class="contact-item">
+          <i class="fas fa-envelope"></i>
+          <span><a href="mailto:sanjana04645@gmail.com">sanjana04645@gmail.com</a></span>
+        </div>
+        <div class="contact-item">
+          <i class="fab fa-github"></i>
+          <span><a href="https://github.com/Sanjanarv26" target="_blank">Sanjanarv26 (Sanjana R V)</a></span>
+        </div>
+        <div class="contact-item">
+          <i class="fab fa-linkedin"></i>
+          <span><a href="https://www.linkedin.com/in/sanjana-r-v-86b49a299?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank">LinkedIn Profile</a></span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Education -->
+    <section data-aos="fade-up" data-aos-delay="200">
+      <h2>Education</h2>
+      <p><strong>PES Institute of Technology and Management, Shivamogga</strong><br>
+      Bachelor of Engineering (CSD) | 2023–2027</p>
+      <p><strong>Vaishnavi Chethana PU College, Davanagere</strong><br>2020–2022 | 67.66%</p>
+      <p><strong>St. Paul's Convent Girls High School, Davanagere</strong><br>2019–2020 | 84%</p>
+    </section>
+
+    <!-- Skills -->
+    <section data-aos="fade-up" data-aos-delay="300">
+      <h2>Skills</h2>
+      <div class="skills-list">
+        <span class="skill">Python</span>
+        <span class="skill">C</span>
+        <span class="skill">Java</span>
+        <span class="skill">HTML</span>
+        <span class="skill">MySQL</span>
+        <span class="skill">Leadership</span>
+        <span class="skill">Teamwork</span>
+        <span class="skill">Communication</span>
+        <span class="skill">English (Fluent)</span>
+        <span class="skill">Kannada (Fluent)</span>
+      </div>
+    </section>
+
+    <!-- Projects -->
+    <section data-aos="fade-up" data-aos-delay="400">
+      <h2>Projects</h2>
+
+      <div class="project-item">
+        <h3>Byte Bazar</h3>
+        <p>
+          A full-featured e-commerce web app designed for online product sales and order management. 
+          Built with PHP and MySQL, featuring an admin dashboard and secure user login.
+        </p>
+        <a href="https://github.com/Sanjanarv26/Byte-Bazar" class="button" target="_blank">View code</a>
+      </div>
+
+      <div class="project-item">
+        <h3>Swift Track</h3>
+        <p>
+          Developed a desktop application to manage parcel booking, delivery tracking, and customer records. Built using Java Swing and MySQL with secure login and role-based access. Improved courier operations by automating manual tasks and generating reports
+        </p>
+        <a href="https://github.com/Sanjanarv26/courier-management" class="button" target="_blank">View code</a>
+      </div>
+
+      <div class="project-item">
+        <h3>Top Down Lights</h3>
+        <p>
+          A directional lighting simulation project designed for gaming, 3D rendering, and architectural visualization to create realistic lighting effects.
+        </p>
+        <a href="https://github.com/Sanjanarv26/CGV-Projects" class="button" target="_blank">View code</a>
+      </div>
+    </section>
+
+    <!-- Certifications -->
+    <section data-aos="fade-up" data-aos-delay="600">
+      <h2>Certifications</h2>
+      <ul>
+        <li>AI/ML Workshop – BITS Hyderabad (24-hour Hackathon)</li>
+        <li>Skill Development Training – Bosch Vocational Center</li>
+        <li>Java for Enterprise Development – JKT Solutions</li>
+        <li>Unlocking Cyber Security – JKT Solutions</li>
+        <li>Cloud Computing & DevOps – EXCEL Training</li>
+        <li>Computer Graphics Advanced – Insyspirrngboard</li>
+      </ul>
+    </section>
+  </main>
+
+  <!-- Scroll to top button -->
+  <button id="scrollTop">
+    <i class="fas fa-arrow-up"></i>
+  </button>
+
+  <footer data-aos="fade-up">
+    © 2025 Sanjana R V | Designed with ❤ and Code
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollToPlugin.min.js"></script>
+  
+  <script>
+    // Initialize AOS (Animate on Scroll)
+    AOS.init({
+      duration: 1000,
+      once: false,
+      mirror: true,
+      offset: 100,
+      easing: 'ease-in-out'
+    });
+
+    // Particles.js configuration
+    particlesJS('particles-js', {
+      particles: {
+        number: {
+          value: 60,
+          density: {
+            enable: true,
+            value_area: 800
+          }
+        },
+        color: {
+          value: '#1abc9c'
+        },
+        shape: {
+          type: 'circle',
+          stroke: {
+            width: 0,
+            color: '#000000'
+          }
+        },
+        opacity: {
+          value: 0.3,
+          random: true,
+          anim: {
+            enable: true,
+            speed: 1,
+            opacity_min: 0.1,
+            sync: false
+          }
+        },
+        size: {
+          value: 3,
+          random: true,
+          anim: {
+            enable: true,
+            speed: 2,
+            size_min: 0.1,
+            sync: false
+          }
+        },
+        line_linked: {
+          enable: true,
+          distance: 150,
+          color: '#1abc9c',
+          opacity: 0.2,
+          width: 1
+        },
+        move: {
+          enable: true,
+          speed: 1.5,
+          direction: 'none',
+          random: false,
+          straight: false,
+          out_mode: 'out',
+          bounce: false,
+          attract: {
+            enable: false,
+            rotateX: 600,
+            rotateY: 1200
+          }
+        }
+      },
+      interactivity: {
+        detect_on: 'canvas',
+        events: {
+          onhover: {
+            enable: true,
+            mode: 'grab'
+          },
+          onclick: {
+            enable: true,
+            mode: 'push'
+          },
+          resize: true
+        },
+        modes: {
+          grab: {
+            distance: 140,
+            line_linked: {
+              opacity: 0.5
+            }
+          },
+          push: {
+            particles_nb: 4
+          }
+        }
+      },
+      retina_detect: true
+    });
+
+    // GSAP Animations
+    gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
+
+    // Scroll to top button
+    const scrollTopBtn = document.getElementById('scrollTop');
+    
+    window.addEventListener('scroll', () => {
+      if (window.pageYOffset > 300) {
+        scrollTopBtn.classList.add('show');
+      } else {
+        scrollTopBtn.classList.remove('show');
+      }
+    });
+
+    scrollTopBtn.addEventListener('click', () => {
+      gsap.to(window, {
+        duration: 1,
+        scrollTo: 0,
+        ease: 'power3.inOut'
+      });
+    });
+
+    // Loading animation
+    window.addEventListener('load', () => {
+      const loader = document.querySelector('.loader');
+      setTimeout(() => {
+        loader.classList.add('hidden');
+      }, 1500);
+    });
+
+    // Typing effect for header
+    const headerTitle = document.querySelector('header h1');
+    const originalText = headerTitle.textContent;
+    headerTitle.textContent = '';
+    let i = 0;
+
+    function typeWriter() {
+      if (i < originalText.length) {
+        headerTitle.textContent += originalText.charAt(i);
+        i++;
+        setTimeout(typeWriter, 150);
+      }
+    }
+
+    setTimeout(typeWriter, 1700);
+  </script>
+</body>
+</html>
